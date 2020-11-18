@@ -1,0 +1,27 @@
+*{
+    background-color: rgba(117, 197, 250, 0.75);
+}
+
+body {
+    background-color: rgb(153, 153, 153);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 180px auto auto;
+    grid-template-rows: 180px 200px;
+    grid-gap: 30px;
+    padding: 30px;
+}
+
+.header{
+    grid-column: 1 / span 2;
+}
+.about{
+    grid-column: 3 / span 2;
+}
+
+.main {
+    grid-column: 1 / span 4;
+}
+
