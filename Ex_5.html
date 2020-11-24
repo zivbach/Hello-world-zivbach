@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <title>Beach</title>
+</head>
+<body>
+    <h1>Beach</h1>
+    <p>Hi, <br>
+        1.  Where is your favorite beach? 
+    </p>
+    <p id="P1" style= "color: blue;"></p>
+    
+    <script>
+        var x;
+        x="Mawagan Michael, Israel.";
+        document.getElementById("P1").innerHTML =
+        "My favorite beach is at " + x;
+    </script>
+
+    <p>2. Why the beach has imfluence on you ? </p>
+    <p id="P2" style= "color: blue;"></p>
+     
+    <script>
+        function functionChangeText (){
+        document.getElementById("P3").innerHTML =
+        "3. What is the best hour in the day to be in the beach ?";
+        document.getElementById("P4").innerHTML =
+        "At sunset.";
+        }
+        
+     </script>
+         <p id="P3"> 3. What is your favorite hour in the day to be in the beach ?</p>
+         <button type = "button" onclick="functionChangeText()">Change Question</button>
+         <p id="P4" style= "color: blue;"></p>
+
+    <script>
+        var reason;
+        reason = "I grow up by the sea.";
+        function FunctinReason (reason){
+            return reason;
+        }
+        document.getElementById("P2").innerHTML =
+        "The reason the beach has influence on my life is " + FunctinReason(reason);
+
+    </script>
+
+    <script>
+        function functionChangeImage(){
+        document.getElementById("beachPic").src= "sunset.jpeg";
+        }
+
+     </script>    
+        <p> What do you think about this image ? </p>
+         <img id="beachPic" alt="And now at noon" src="noon.jpg" width="20%">
+         <br>
+         <button type = "button" onclick="functionChangeImage()">Other</button>
+
+
+</body>
+
+
+</html>
