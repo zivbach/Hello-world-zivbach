@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment8</title>
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/MyCVHomePage.css') }}">
+</head>
+<body style="text-align: center" >
+    <h1>Hobbies and Fun</h1>
+    <div>
+        {% set user = {'firstname':"Ziv", 'lastname':"Bach"} %}
+        <h1>Get to Know {{ user.firstname }} {{ user.lastname }}</h1>
+        <h2>My Hobbies are:</h2>
+        <ul>
+        {% for Title in Hobbies %}
+            <li>{{Title}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="if/else">
+        <p>
+            {% if user %}
+            <h2>Hello {{ user.firstname }} {{ user.lastname }}</h2>
+            {% else %}
+            <h2>Hello Who Are You?</h2>
+            {% endif %}
+        </p>
+    </div>
+
+
+    {% block agian %}
+    {% include('Ex_5.html') %}
+    {% endblock %}
+</body>
+
+</html>

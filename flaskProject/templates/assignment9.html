@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 9</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="first">
+        <form  action="/assignment9" method="GET">
+            <h1>Please enter your username</h1>
+            <label for="username"> <b>Username:</b> </label>
+            <input name="username">
+            <input type="submit">
+        </form>
+         {% if flag %}
+             {% if username==''%}
+                 {% for user in users %}
+                    <h2>First Name: {{ user.firstname }}</h2>
+                    <h2>Last Name: {{ user.lastname }}</h2>
+                    <h2>Email: {{ user.email }}</h2>
+                    <h2>Username: {{ user.username }}</h2>
+                {% endfor %}
+             {% endif %}
+             {% for user in users %}
+                 {% if user.username == username %}
+                    <h2>Hello {{ user.firstname }} {{ user.lastname }}</h2>
+                 {% endif %}
+             {% endfor %}
+        {% endif %}
+        </div>
+        <div class="second">
+            {% if session.loggedIn == True %}
+            <h1>User {{ session.get('username') }} - is logged in</h1>
+            <a href='/logout' ><button> Log Out </button></a>
+            {% else %}
+                <form action="/assignment9" method="POST">
+                    <h1>Please enter your username and email address</h1>
+                      <label for="Username"> <b>Username:</b> </label>
+                     <input name="username" required>
+                     <label for="Email"> <b> Email:</b> </label>
+                     <input name="email" required>
+                     <input type="submit">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

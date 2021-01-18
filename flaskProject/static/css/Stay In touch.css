@@ -1,0 +1,46 @@
+ 
+form{
+    
+    text-align: center;
+    justify-content: space-around;
+    grid-template-columns:  300px 400px ;
+    grid-template-rows: 50px auto ;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 15px 15px 0px 0px;
+}
+title{
+    display: grid;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 15px 15px 0px 0px;
+    width: auto;
+    height: 300px;
+    padding: 40px;
+}
+
+.backbuton{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    grid-column: 1 / span 2;
+    border: none;
+    width: 85px;
+    height: 85px;
+    background-color: rgb(169, 118, 202);
+    border-radius: 100%;
+    animation: pulse 4s infinite ;
+    text-align:  center;
+    margin: 35px;
+    cursor: pointer;
+}
+
+
+.part1.part2.part3.part4.part5{
+    text-align: center;
+    align-items: center;
+    width: auto;
+    height: 300px;
+    padding: 40px;
+    
+}
+
