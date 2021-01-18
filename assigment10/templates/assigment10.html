@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assi10</title>
+    <script src={{url_for('assigment10.static', filename='ass10.js') }}></script>
+    <link rel="stylesheet" href={{url_for('static', filename='css/general.css') }}>
+
+</head>
+<body>
+<div class="grid-containerCV">
+    <div class="main">
+        <form action="/assigment10" method="post">
+            <h1> Insert User </h1>
+            <label for="FirstName" required> <b>First Name:</b> </label>
+            <input name="firstname"><br>
+            <label for="LastName" required> <b>Last Name:</b> </label>
+            <input name="lastname"><br>
+            <label for="Email"> <b>Email:</b> </label>
+            <input name="email" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="portfolio">
+        <form action="/assigment10" method="get">
+            <h1> Update Email's User </h1>
+            <label for="firstname"><b>First Name: </b></label>
+            <input name="firstnameUp" required><br>
+            <label for="emailUp"><b> Email: </b></label>
+            <input name="emailUp" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="contactLeft">
+        <form action="/assigment10" method="get">
+            <h1> Delete User </h1>
+            <label for="firstname"><b>First Name: </b></label>
+            <input name="firstnameDel" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="contactRight">
+        <h1> Lists of Users: </h1>
+        {% if users %}
+            {% for user in users  %}
+                <li>
+                {{ user.firstname }} {{ user.lastname }} {{ user.Email }}
+                </li>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+</div>
+</body>
+</html>
