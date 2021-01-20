@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assi10</title>
+    <script src={{url_for('assigment10.static', filename= 'js/10.js') }}></script>
+    <link rel="stylesheet" href={{url_for('static', filename='css/general.css') }}>
+
+</head>
+<body>
+<div class="grid-container">
+    <div class="first">
+        <form action="/assigment10" method="post">
+            <h1> Insert User </h1>
+            <label for="FirstName" required> <b>First Name:</b> </label>
+            <input name="firstname"><br>
+            <label for="LastName" required> <b>Last Name:</b> </label>
+            <input name="lastname"><br>
+            <label for="Email"> <b>Email:</b> </label>
+            <input name="email" required><br>
+            <label for="Username"> <b>Username:</b> </label>
+            <input name="username" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="second">
+        <form action="/assigment10" method="get">
+            <h1> Update Email's User </h1>
+          <label for="usernameUpload"> <b>Username:</b> </label>
+            <input name="usernameUpload" required><br>
+            <label for="emailUpload"><b> Email: </b></label>
+            <input name="emailUpload" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="third">
+        <form action="/assigment10" method="get">
+            <h1> Delete User </h1>
+          <label for="Username"> <b>Username:</b> </label>
+            <input name="usernameDelete" required><br>
+            <input type="submit" onclick="MessBox()">
+        </form>
+    </div>
+
+    <div class="last">
+        <h1> All Users: </h1>
+        {% if users %}
+            {% for user in users  %}
+                <li>
+                 {{ user.username }} {{ user.firstname }} {{ user.lastname }} {{ user.Email }}
+                </li>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+</div>
+</body>
+</html>

@@ -10,7 +10,6 @@ app.secret_key = '123'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
 
 
-
 @app.route("/")
 def home():
     return render_template('MyCVHomePage.html')
@@ -73,6 +72,26 @@ def sign_out():
 
 from assigment10.assigment10 import assigment10
 app.register_blueprint(assigment10)
+
+
+@app.route('/assignment11/users')
+def users():
+    if request.method == 'GET':
+        query = "SELECT * FROM users"
+        query_result = interact_db(query=query, query_type='fetch')
+    return jsonify({'success': 'True', 'data': query_result})
+
+
+@app.route('/assignment11/users/selected', defaults={'username': hadarb})
+@app.route('/assignment11/users/selected/<username>')
+def specificUser(username):
+    if request.method == 'GET':
+        query = "SELECT * FROM users WHERE Username='%s'" % username
+        query_result = interact_db(query=query, query_type='fetch')
+        if len(query_result) == 0:
+            return jsonify({'success': 'False', 'data': []})
+        else:
+            return jsonify({'success': 'True', 'data': query_result[0]})
 
 
 

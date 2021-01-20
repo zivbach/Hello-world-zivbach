@@ -42,7 +42,22 @@ body{
     padding: 30px;
 
 }
+.third{
+    grid-column: 1/span 1;
+    background-color:rgba(255, 255, 255, 0.65);
+    height: 300px;
+    padding: 30px;
 
+}
+
+
+.last{
+    grid-column: 2/span 1;
+    background-color:rgba(255, 255, 255, 0.65);
+    height: 200px;
+    padding: 30px;
+
+}
 
 @keyframes pulse {
     0% ,100%{
